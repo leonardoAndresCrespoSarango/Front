@@ -6,6 +6,15 @@ export const environment = {
   production: false,
   baseUrl: '',
   useHash: false,
+  firebaseConfig : {
+    apiKey: "AIzaSyA_ShlM8uKOOeEp8whEP4KIIxZCaPXTJLU",
+    authDomain: "autenticacion-f2d68.firebaseapp.com",
+    projectId: "autenticacion-f2d68",
+    storageBucket: "autenticacion-f2d68.appspot.com",
+    messagingSenderId: "251045749850",
+    appId: "1:251045749850:web:75fa2f2fbd05661cffe463",
+    measurementId: "G-10YW4W8BRC"
+  }
 };
 
 /*
