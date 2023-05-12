@@ -49,9 +49,7 @@ export class UserService {
   getUserFireById(user: newUser){
     return this.userCollection.doc(user.uid).valueChanges();
   }
-  eliminarProductFire(user: newUser){
-    this.userCollection.doc(user.uid).delete();
-  }
+  
 
 }
 

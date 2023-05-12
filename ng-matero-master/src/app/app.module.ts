@@ -71,7 +71,8 @@ export function TranslateHttpLoaderFactory(http: HttpClient) {
     }),
   ],
   providers: [
-    { provide: BASE_URL, useValue: environment.baseUrl },
+    //provide: BASE_URL, useValue: environment.baseUrl
+    {  provide: FIREBASE_OPTIONS, useValue: environment.firebaseConfig },
     httpInterceptorProviders,
     appInitializerProviders,
   ],

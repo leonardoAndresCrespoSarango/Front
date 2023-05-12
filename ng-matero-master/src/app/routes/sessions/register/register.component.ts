@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators, AbstractControl } from '@angular/forms';
+import {UserService} from "../../../../service/user.service";
+import {newUser} from "../../../../domain/newUser";
 
 @Component({
   selector: 'app-register',
@@ -7,6 +9,8 @@ import { FormBuilder, Validators, AbstractControl } from '@angular/forms';
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent {
+  user: newUser= new newUser()
+  eliminarAnterior=0;
   registerForm = this.fb.nonNullable.group(
     {
       username: ['', [Validators.required]],
@@ -18,7 +22,18 @@ export class RegisterComponent {
     }
   );
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder,private userService: UserService) {}
+  guardar(){
+    console.log(this.user)
+    if(this.eliminarAnterior==0){
+      this.userService.addUserFire(this.user)
+    }else{
+      this.userService.updateProductFire(this.user)
+    }
+
+    this.user= new newUser()
+
+  }
 
   matchValidator(source: string, target: string) {
     return (control: AbstractControl) => {
