@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 import { filter } from 'rxjs/operators';
 import { AuthService } from '@core/authentication';
+import {UserService} from "../../../../service/user.service";
+import {newUser} from "../../../../domain/newUser";
 
 @Component({
   selector: 'app-login',
@@ -19,13 +21,18 @@ export class LoginComponent {
     rememberMe: [false],
   });
 
-  constructor(private fb: FormBuilder, private router: Router, private auth: AuthService) {}
+  constructor(private fb: FormBuilder, private router: Router, private auth: AuthService,private userService: UserService) {}
+  buscar(user: newUser) {
+    this.userService.updateProductFire(user);
+
+  }
+
 
   get username() {
     return this.loginForm.get('username')!;
   }
 
-  get password() {
+  get password():any {
     return this.loginForm.get('password')!;
   }
 

@@ -16,6 +16,7 @@ export class RegisterComponent {
       username: ['', [Validators.required]],
       password: ['', [Validators.required]],
       confirmPassword: ['', [Validators.required]],
+
     },
     {
       validators: [this.matchValidator('password', 'confirmPassword')],

@@ -11,7 +11,7 @@
       <form class="form-field-full" [formGroup]="registerForm">
         <mat-form-field appearance="outline">
           <mat-label>{{'username' | translate}}</mat-label>
-          <input matInput formControlName="username" required [(ngModel)]="user.username">
+          <input matInput type="username" formControlName="username" required [(ngModel)]="user.username">
           <mat-error *ngIf="registerForm.get('username')?.invalid">
             <span>{{'validations.required' | translate}}</span>
           </mat-error>
