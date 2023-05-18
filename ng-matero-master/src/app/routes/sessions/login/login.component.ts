@@ -51,7 +51,7 @@ export class LoginComponent {
     this.loading = true;
     this.afAuth.signInWithEmailAndPassword(email, password).then((user) => {
 
-        this.router.navigateByUrl('/dashboard');
+        this.router.navigateByUrl('/dashboard')
         console.log("dashboard")
 
     }).catch((error) => {
@@ -67,17 +67,18 @@ export class LoginComponent {
   }
 
 
-  get email() {
-    return this.formLogin.get('email')!;
+  get username() {
+    return this.loginForm.get('username')!;
   }
 
-  get password():any {
-    return this.formLogin.get('password')!;
+  get password() {
+    return this.loginForm.get('password')!;
   }
 
   get rememberMe() {
     return this.loginForm.get('rememberMe')!;
   }
+
   onSubmit() {
     this.userService.login(this.formLogin.value)
       .then(response => {
@@ -103,7 +104,7 @@ export class LoginComponent {
     this.isSubmitting = true;
 
     this.auth
-      .login1(this.email.value, this.password.value)
+      .login(this.username.value, this.password.value, this.rememberMe.value)
       .pipe(filter(authenticated => authenticated))
       .subscribe(
         () => this.router.navigateByUrl('/'),

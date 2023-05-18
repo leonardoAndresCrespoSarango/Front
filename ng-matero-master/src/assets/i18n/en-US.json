@@ -1,7 +1,7 @@
 {
   "menu": {
-    "dashboard": "Dashboard",
-    "design": "Design",
+    "dashboard": "grafica",
+    "design": "diseño",
     "design.colors": "Color System",
     "design.icons": "Material Icons",
     "material": "Material",
@@ -59,7 +59,7 @@
     "profile": "Profile",
     "profile.overview": "Overview",
     "profile.settings": "Settings",
-    "extensions": "Extensions",
+    "extensions": "Repository",
     "sessions": "Sessions",
     "sessions.403": "403",
     "sessions.404": "404",
