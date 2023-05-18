@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators, AbstractControl, FormGroup, FormControl} from '@angular/forms';
-import {UserService} from "../../../../service/user.service";
-import {newUser} from "../../../../domain/newUser";
-import {Router} from "@angular/router";
-import {AngularFireAuth} from "@angular/fire/compat/auth";
-import {ToastrService} from "ngx-toastr";
-import {FirebaseCodeErrorService} from "../../../../service/firebase-code-error.service";
+import {UserService} from '../../../../service/user.service';
+import {newUser} from '../../../../domain/newUser';
+import {Router} from '@angular/router';
+import {AngularFireAuth} from '@angular/fire/compat/auth';
+import {ToastrService} from 'ngx-toastr';
+import {FirebaseCodeErrorService} from '../../../../service/firebase-code-error.service';
 
 @Component({
   selector: 'app-register',
@@ -13,9 +13,9 @@ import {FirebaseCodeErrorService} from "../../../../service/firebase-code-error.
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
-  user: newUser= new newUser()
+  user: newUser= new newUser();
 
-  eliminarAnterior=0;
+  //eliminarAnterior=0;
   registerForm = this.fb.nonNullable.group(
     {
       username: ['', [Validators.required]],

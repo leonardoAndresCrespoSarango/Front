@@ -2,7 +2,7 @@
   "menu": {
     "dashboard": "grafica",
     "design": "diseño",
-    "design.colors": "Color System",
+    "design.colors": "áreas estándar (ERM,PRM,LIC,ETC.)",
     "design.icons": "Material Icons",
     "material": "Material",
     "material.form-controls": "Form Controls",

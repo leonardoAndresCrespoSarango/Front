@@ -7,11 +7,19 @@
       "icon": "dashboard"
 
     },
+
     {
       "route": "design",
       "name": "design",
       "type": "sub",
       "icon": "color_lens",
+      "children": [
+        {
+          "route": "colors",
+          "name": "colors",
+          "type": "link"
+        }
+      ],
 
       "permissions": {
         "only": [
@@ -42,11 +50,6 @@
         {
           "route": "kitchen-sink",
           "name": "kitchen-sink",
-          "type": "link"
-        },
-        {
-          "route": "remote-data",
-          "name": "remote-data",
           "type": "link"
         }
       ],
