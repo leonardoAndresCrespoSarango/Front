@@ -12,7 +12,7 @@
       "route": "design",
       "name": "design",
       "type": "sub",
-      "icon": "color_lens",
+      "icon": "queue",
       "children": [
         {
           "route": "colors",
