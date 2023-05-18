@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "autenticacion-f2d68": {
+      "hosting": {
+        "ng-matero": [
+          "autenticacion-f2d68"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "autenticacion-f2d68"
+  }
+}

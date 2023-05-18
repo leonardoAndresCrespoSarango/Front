@@ -139,10 +139,13 @@
           }
         },
         "deploy": {
-          "builder": "angular-cli-ghpages:deploy",
+          "builder": "@angular/fire:deploy",
           "options": {
-            "baseHref": "/ng-matero/",
-            "noSilent": true
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "ng-matero:build:production",
+            "firebaseProject": "autenticacion-f2d68",
+            "firebaseHostingSite": "autenticacion-f2d68"
           }
         }
       }

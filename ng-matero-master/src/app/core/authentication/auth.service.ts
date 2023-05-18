@@ -39,6 +39,12 @@ export class AuthService {
       map(() => this.check())
     );
   }
+  login1(email: string, password: string) {
+    return this.loginService.login(email, password).pipe(
+      tap(token => this.tokenService.set(token)),
+      map(() => this.check())
+    );
+  }
 
   refresh() {
     return this.loginService
