@@ -3,15 +3,24 @@ import { HttpClient } from '@angular/common/http';
 import { Token, User } from './interface';
 import { Menu } from '@core';
 import { map } from 'rxjs/operators';
+import {Auth, signInWithEmailAndPassword} from "@angular/fire/auth";
+import {newUser} from "../../../domain/newUser";
+import {AngularFireAuth} from "@angular/fire/compat/auth";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root',
 })
 export class LoginService {
-  constructor(protected http: HttpClient) {}
+
+  public usuario: newUser=new newUser();
+  constructor(protected http: HttpClient, private auth: Auth) {}
 
   login(username: string, password: string, rememberMe = false) {
     return this.http.post<Token>('/auth/login', { username, password, rememberMe });
+  }
+  entrar({ email, password }: any) {
+    return this.http.post<Token>('/auth/login',  signInWithEmailAndPassword(this.auth, email, password));
   }
 
   refresh(params: Record<string, any>) {

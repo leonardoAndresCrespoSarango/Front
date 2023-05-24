@@ -40,9 +40,9 @@ export function TranslateHttpLoaderFactory(http: HttpClient) {
   imports: [
     BrowserModule,
 
-    /*AngularFireModule.initializeApp(environment.firebaseConfig),
+    /*AngularFireModule.initializeApp(environment.firebaseConfig),*/
     AngularFireAuthModule,
-    AngularFirestoreModule,*/
+    /*AngularFirestoreModule,*/
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),

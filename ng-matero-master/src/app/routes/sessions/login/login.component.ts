@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
-import { filter } from 'rxjs/operators';
+import {filter, subscribeOn} from 'rxjs/operators';
 import { AuthService } from '@core/authentication';
 import {UserService} from "../../../../service/user.service";
 import {newUser} from "../../../../domain/newUser";
@@ -51,8 +51,31 @@ export class LoginComponent {
     this.loading = true;
     this.afAuth.signInWithEmailAndPassword(email, password).then((user) => {
 
-        this.router.navigateByUrl('/dashboard')
-        console.log("dashboard")
+      if(user.user?.emailVerified) {
+        this.isSubmitting = true;
+
+        this.auth
+          .login(this.username.value, this.password.value, this.rememberMe.value)
+          .pipe(filter(authenticated => authenticated))
+          .subscribe(
+            () => this.router.navigateByUrl('/'),
+            (errorRes: HttpErrorResponse) => {
+              if (errorRes.status === 422) {
+                const form = this.loginUsuario;
+                const errors = errorRes.error.errors;
+                Object.keys(errors).forEach(key => {
+                  form.get(key === 'email' ? 'username' : key)?.setErrors({
+                    remote: errors[key][0],
+                  });
+                });
+              }
+              this.isSubmitting = false;
+            }
+          );
+        console.log('entrando a dashboard')
+      } else {
+        this.router.navigate(['/verificar-correo']);
+      }
 
     }).catch((error) => {
       this.loading = false;
@@ -122,4 +145,5 @@ export class LoginComponent {
         }
       );
   }
+
 }

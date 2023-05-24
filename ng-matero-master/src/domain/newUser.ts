@@ -1,7 +1,9 @@
 export class newUser {
-
-  uid?: string;
-  username?: string;
-  password?: string;
-  confirmPassword?: number;
+constructor(
+  public name?: string,
+  public email?:string,
+  public photo?:string,
+  public uid?: string,
+) {
+}
 }
