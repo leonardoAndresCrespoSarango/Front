@@ -9,6 +9,7 @@ import { Error403Component } from './sessions/403.component';
 import { Error404Component } from './sessions/404.component';
 import { Error500Component } from './sessions/500.component';
 import { VerificarCorreoComponent } from './sessions/verificar-correo/verificar-correo.component';
+import {NgChartsModule} from "ng2-charts";
 
 const COMPONENTS: any[] = [
   DashboardComponent,
@@ -21,7 +22,7 @@ const COMPONENTS: any[] = [
 const COMPONENTS_DYNAMIC: any[] = [];
 
 @NgModule({
-  imports: [SharedModule, RoutesRoutingModule],
+    imports: [SharedModule, RoutesRoutingModule, NgChartsModule],
   declarations: [...COMPONENTS, ...COMPONENTS_DYNAMIC, VerificarCorreoComponent],
 })
 export class RoutesModule {}

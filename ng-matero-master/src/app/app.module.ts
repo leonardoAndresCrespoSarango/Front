@@ -20,8 +20,11 @@ import { BASE_URL, httpInterceptorProviders, appInitializerProviders } from '@co
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemDataService } from '@shared/in-mem/in-mem-data.service';
+//chart.js
+import { NgChartsModule } from 'ng2-charts';
 
 //importaciones de firebase
+
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
@@ -47,7 +50,7 @@ export function TranslateHttpLoaderFactory(http: HttpClient) {
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
 
-
+    NgChartsModule,
     BrowserAnimationsModule,
     HttpClientModule,
     CoreModule,

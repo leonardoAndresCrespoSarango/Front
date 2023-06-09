@@ -4,3 +4,16 @@
 .col-md-7, .chart1{
   height: 630%;
 }
+.chart-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .chart {
+    height: 20rem;
+    width: 40rem;
+  }
+}
+

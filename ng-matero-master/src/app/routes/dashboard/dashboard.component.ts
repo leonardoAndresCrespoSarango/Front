@@ -8,6 +8,9 @@ import {
 } from '@angular/core';
 import { SettingsService } from '@core';
 import { Subscription } from 'rxjs';
+import { ViewChild, ElementRef} from '@angular/core';
+import { colors } from './colors';
+
 
 import { DashboardService } from './dashboard.service';
 
@@ -19,6 +22,11 @@ import { DashboardService } from './dashboard.service';
   providers: [DashboardService],
 })
 export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
+
+
+
+
+  ///////////////////////
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = this.dashboardSrv.getData();
 

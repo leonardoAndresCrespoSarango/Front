@@ -19,6 +19,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   { position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O' },
   { position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' },
   { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' },
+  { position: 11, name: 'Sodium', weight: 30, symbol: 'Na' },
 ];
 
 const MESSAGES = [
@@ -185,6 +186,7 @@ export class DashboardService {
       },
     },
   ];
+
 
   constructor(private http: HttpClient) {}
 
