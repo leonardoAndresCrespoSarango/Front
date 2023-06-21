@@ -57,40 +57,7 @@ const MESSAGES = [
 
 @Injectable()
 export class DashboardService {
-  stats = [
-    {
-      title: 'Total Sales',
-      amount: '180,200',
-      progress: {
-        value: 50,
-      },
-      color: 'bg-indigo-500',
-    },
-    {
-      title: 'Revenue',
-      amount: '70,205',
-      progress: {
-        value: 70,
-      },
-      color: 'bg-blue-500',
-    },
-    {
-      title: 'Traffic',
-      amount: '1,291,922',
-      progress: {
-        value: 80,
-      },
-      color: 'bg-green-500',
-    },
-    {
-      title: 'New User',
-      amount: '1,922',
-      progress: {
-        value: 40,
-      },
-      color: 'bg-teal-500',
-    },
-  ];
+
 
   charts = [
     {
@@ -105,17 +72,17 @@ export class DashboardService {
       stroke: {
         curve: 'smooth',
       },
-      series: [
+      series: [ //serie de datos, en este caso dos.
         {
           name: 'UV',
-          data: [31, 40, 28, 51, 42, 109, 100],
+          data: [31, 40, 28, 51, 42, 109, 100,200],
         },
         {
-          name: 'Download',
-          data: [11, 32, 45, 32, 34, 52, 41],
+          name: 'Descarga',
+          data: [11, 32, 45, 32, 34, 52, 41,57],
         },
       ],
-      xaxis: {
+      xaxis: { //Eje x con tipo de fecha y categorías de fecha y hora específicas
         type: 'datetime',
         categories: [
           '2019-11-24T00:00:00',
@@ -125,6 +92,7 @@ export class DashboardService {
           '2019-11-24T04:30:00',
           '2019-11-24T05:30:00',
           '2019-11-24T06:30:00',
+          '2019-11-24T07:30:00',
         ],
       },
       tooltip: {
@@ -203,6 +171,6 @@ export class DashboardService {
   }
 
   getStats() {
-    return this.stats;
+   // return this.stats;
   }
 }
